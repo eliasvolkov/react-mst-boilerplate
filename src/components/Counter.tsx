@@ -4,5 +4,8 @@ import { useMst } from '../models/Root';
 
 export const Counter: React.FC = observer(() => {
     const { counter } = useMst();
-    return <p onClick={counter.increment}>{counter.count}</p>;
+    const onClick = () => {
+        counter.increment();
+    };
+    return <p onClick={onClick}>{counter.count}</p>;
 });

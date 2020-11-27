@@ -2,14 +2,12 @@ import { useContext, createContext } from 'react';
 import { types, Instance } from 'mobx-state-tree';
 import { Counter } from './Counter';
 
-const RootModel = types.model({
+const RootModel = types.model('RootStore', {
     counter: Counter,
 });
 
 const initialState = RootModel.create({
-    counter: {
-        count: 10,
-    },
+    counter: {},
 });
 
 export const rootStore = initialState;
