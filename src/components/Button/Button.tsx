@@ -1,22 +1,25 @@
 import * as React from 'react';
+import styled from '@emotion/styled';
 
 type Props = {
-    children: any;
+    children: React.ReactNode;
     onClick: (e: any) => void;
 };
 
-const styles = {
-    border: '1px solid #eee',
-    borderRadius: 3,
-    backgroundColor: '#FFFFFF',
-    cursor: 'pointer',
-    fontSize: 15,
-    padding: '3px 10px',
-    margin: 10,
-};
+const StyledButton = styled.button`
+    background-color: #c45c5c;
+    outline: none;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+
+    &:active {
+        background-color: #ee4545;
+    }
+`;
 
 export const Button = ({ onClick, children }: Props) => (
-    <button onClick={onClick} style={styles} type="button">
+    <StyledButton onClick={onClick} type="button">
         {children}
-    </button>
+    </StyledButton>
 );
